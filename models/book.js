@@ -1,8 +1,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require("../utils/database") ;
-
 const models = require('../utils/associateModels');
-const User = sequelize.define('User', {
+
+const Book = sequelize.define('Book', {
   // Model attributes are defined here
   id: {
     type:DataTypes.INTEGER,
@@ -13,7 +13,11 @@ const User = sequelize.define('User', {
     type:DataTypes.STRING,
     allowNull:false
   },
-  mobile:{
+  price:{
+    type:DataTypes.STRING,
+    allowNull:false
+  },
+  user_id:{
     type:DataTypes.STRING,
     allowNull:false
   }
@@ -22,7 +26,4 @@ const User = sequelize.define('User', {
 });
 
 
-
-// `sequelize.define` also returns the model
-console.log(User === sequelize.models.User); // true
-module.exports = User;
+module.exports = Book;
